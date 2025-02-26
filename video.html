@@ -1,4 +1,30 @@
-<video autoplay loop muted>
-    <source src="https://antuhdz.github.io/mis-audios/v1.mp4" type="video/mp4">
-    Tu navegador no soporta el elemento de video.
-</video>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor Plyr</title>
+
+    <!-- Link a Plyr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.css" />
+
+</head>
+<body>
+    <!-- Contenedor del reproductor -->
+    <video id="player" controls autoplay loop muted>
+        <source src="https://antuhdz.github.io/mis-audios/v1.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Script de Plyr -->
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.js"></script>
+    <script>
+        // Iniciar el reproductor Plyr
+        const player = new Plyr('#player', {
+            controls: ['play', 'mute', 'volume', 'progress'],
+            autoplay: true,
+            loop: true,
+            muted: true,
+        });
+    </script>
+</body>
+</html>
